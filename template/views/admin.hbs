@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: rgb(59, 58, 58);
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            height: 90vh;
+        }
+        a{
+    text-decoration: none;
+    outline: none;
+    color:red;
+}
+        .form{
+            position: relative;
+            padding: 20px;
+            width: 300px;
+            display: block;
+            background-color: rgb(49, 48, 48);
+            margin: auto;
+            top: 20%;
+          
+        }
+        form{
+            display: inline;
+        }
+        input{
+            margin: 10px;
+            border: navajowhite;
+            color: white;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+        }
+        input:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    {{>navbar}}
+    <div class="form">
+
+        <h1>Login</h1>
+
+        <form method="POST" action="/admin" enctype="application/x-www-form-urlencoded">
+           <input type="text" name="username" id="username" placeholder="Enter Your Username">
+           <input type="password" name="password" id="password"placeholder="Enter Your password">
+        <input type="submit" value="Login">
+          
+        </form>        
+    
+    </div>
+   
+
+<!-- </form> -->
+
+<script>
+  
+    
+</script>
+</body>
+</html>

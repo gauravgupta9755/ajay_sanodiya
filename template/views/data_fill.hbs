@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay sanodiya</title>
+    <style>
+         body{
+            background-color: rgb(70, 52, 52);
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            height: 90vh;
+        }
+        a{
+    text-decoration: none;
+    outline: none;
+    color:red;
+}
+        .form{
+            position: relative;
+            padding: 20px;
+            width: 300px;
+            display: block;
+            background-color: rgb(49, 48, 48);
+            margin: auto;
+            top: 5%;
+          
+        }
+        form{
+            display: inline;
+        }
+        input{
+            margin: 10px;
+            border: navajowhite;
+            color: white;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+        }
+        input:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    {{>navbar}}
+    <div class="form">
+        <form action="/imageupload"method="POST"enctype="multipart/form-data">
+        <h5>Upload Image</h5>
+        <input type="file" name="file">
+        <input type="text" name="title" id="title" placeholder="Enter the title of image">
+        <input type="text" name="dis" id="dis" placeholder="Enter discription of image">
+        <input type="submit" value="upload">
+        
+        </form>
+    </div>
+
+    <div class="form">
+        <form action="/videoupload" method="POST"enctype="multipart/form-data"  >
+        <h5>Upload video</h5>
+        <input type="file" name="file">
+        <input type="text" name="title" id="title" placeholder="Enter the title of video">
+        <input type="text" name="dis" id="dis" placeholder="Enter discription of video">
+        <input type="submit" value="upload">
+        
+        </form>
+
+    </div>
+     <div class="form">
+        <form action="/link" method="POST"enctype="multipart/form-data">
+        <h5>Upload video by youtube link</h5>
+        <input type="text" name="link"placeholder="Enter the link ">
+        <input type="text" name="title" id="title" placeholder="Enter the title of video">
+        <input type="text" name="dis" id="dis" placeholder="Enter discription of video">
+        <input type="submit" value="upload">
+        
+        </form>
+        
+    </div>
+    
+    
+</body>
+</html>

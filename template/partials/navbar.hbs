@@ -1,0 +1,120 @@
+ 
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+        Ajay sanodiya
+        </title>
+        <style>*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.nav_contenar{
+    width: 100%;
+    margin-top: 1px;
+}
+.nav_contenar nav{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.name{
+   margin-right: auto;
+   margin-left: 10px;
+    /* margin: auto; */
+    font-size:1.5vw;
+    color: rgb(0, 233, 124);
+}
+.nav_item{
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.nav_item ul{
+    display: flex;
+    margin: 3px;
+    list-style: none;
+    margin-right: 3vw;
+}
+.nav_item ul li{
+    margin: auto;
+    margin-right: 10px;
+  
+}
+.nav_item ul li a{
+    text-decoration: none;
+    color: white;
+}
+.nav_item ul li:hover{
+    cursor: pointer;
+   
+    color: gray;
+}
+.search_div{
+align-items: center;
+justify-content: center;
+}
+.search_div input{
+    border-style: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+    width: 20vw;
+}
+.search_div input:focus{
+    outline: none;
+
+}
+.search_div button{
+    background-color: rgb(0, 233, 124);
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+}
+.search_div button:hover{
+    cursor: pointer;
+}
+</style>
+    </head>
+    <body>
+         <div class="nav_contenar">
+        <nav>
+            <div class="name">
+               <a href="/"><h1>Ajay Space Collection</h1></a> 
+            </div>
+            <div class="nav_item">
+                <ul>
+                    <li><a href="./admin.html">Admin</a></li>
+                    <li><select name="subject_item" id="">
+                            <option value="all"><a href="./all.html">All</a></option>
+                            <option value="space"><a href="./all.html">Space</a></option>
+                        </select></li>
+                </ul>
+                <div class="search_result">
+                  <div class="search_div">
+                    <input type="text">
+                    <button>Search</button>
+                </div>
+                <div class="result">
+                    <select name="search_result" id="result"></select>
+                </div>
+                </div>
+                
+            </div>
+        </nav>
+    </div>
+        
+    </body>
+    </html>

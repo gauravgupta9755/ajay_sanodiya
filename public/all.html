@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all Collection</title>
+     <link rel="stylesheet" href="./index.css">
+     <style>
+         body{
+             background-color: rgb(95, 66, 66);
+         }
+         span{
+             text-align: center;
+             justify-content: center;
+             margin: auto;
+             margin-top: 10px;
+         }
+         #contenar{
+             text-align: center;
+             justify-content: center;
+             margin: auto;
+            }
+         
+     </style>
+</head>
+<body>
+   
+    <div class="nav_contenar">
+        <nav>
+            <div class="name">
+               <a href="/"><h1>Ajay Space Collection</h1></a> 
+            </div>
+            <div class="nav_item">
+                <ul>
+                    <li><a href="./admin.html">Admin</a></li>
+                    <li><select name="subject_item" id="">
+                            <option value="all">All</option>
+                            <option value="space">Space</option>
+                        </select></li>
+                </ul>
+                <div class="search_div">
+                    <input type="text">
+                    <button>Search</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="contenar"></div>
+
+    <script>
+        const setdata = (data) => {
+    
+   
+    
+
+
+    data.map((value) => {
+
+        const image_contenar = document.createElement("span")
+        image_contenar.setAttribute("class", "image_contenar");
+
+
+        if (value.type=="image/jpeg"||"image/gif"||"image/png") {
+            var img = document.createElement("a");
+            img.setAttribute("href", `/${value.link}`);
+            var anc = document.createElement("img");
+            anc.setAttribute("src", `/${value.link}`);
+            img.appendChild(anc);
+            console.log(img);
+        }
+        if (value.type=="video/mp4") {
+            if (value.type != "video/youtube") {
+                var img = document.createElement("video")
+                img.setAttribute("controls", true)
+                var source = document.createElement("source");
+                source.setAttribute("src", value.link);
+                source.setAttribute("type", value.type)
+                img.appendChild(source)
+                img.style.width = "160px"
+            }
+          
+
+        }
+         if (value.type == "video/youtube") {
+                var img = document.createElement("iframe")
+                img.style.width = "160px"
+                img.style.height = "104px"
+                img.setAttribute("src", value.link);
+            }
+
+
+
+
+
+
+
+        const ancer=document.createElement("a")
+        ancer.setAttribute("href",`${value.link}`)
+        const h1 = document.createElement("span")
+        h1.textContent = value.title;
+        ancer.appendChild(h1);
+
+        image_contenar.appendChild(img);
+        image_contenar.appendChild(ancer);
+       const span=document.createElement("span");
+        span.appendChild(image_contenar);
+        
+      document.getElementById("contenar").appendChild(span);
+
+
+    })
+
+
+
+}
+
+const getimagedata = async () => {
+    const res = await fetch("/all");
+    const data = await res.json();
+    
+
+    setdata(data);
+   
+}
+getimagedata();
+    </script>
+</body>
+</html>
